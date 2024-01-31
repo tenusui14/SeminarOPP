@@ -39,7 +39,7 @@ public class Main {
 //            System.out.println(i + " " + animal);
 //            i++;
 //        }
-
+/*    HW 1:
         Cat cat = new Cat();
         cat.toFly();
         cat.toGo();
@@ -80,6 +80,8 @@ public class Main {
         fish.toFly();
         fish.toGo();
         fish.toSwim();
+*/
+
 
     }
 }

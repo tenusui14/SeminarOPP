@@ -11,6 +11,13 @@ public class Fish extends Animal {
     public Fish() {
         super();
     }
+
+    @Override
+    public void eat() {
+        System.out.println("Рыба поймала малька и ест");
+    }
+
+    /* HW1
     @Override
     public void toFly() {
         System.out.println((animalType() + " не умеет летать"));
@@ -18,5 +25,8 @@ public class Fish extends Animal {
     @Override
     public void toGo() {
         System.out.println(animalType() + " не умеет ходить");
+        }
+     */
+
     }
-}
+

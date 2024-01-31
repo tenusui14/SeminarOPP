@@ -13,6 +13,12 @@ public class Hawk extends Animal{
     }
 
     @Override
+    public void eat() {
+        System.out.println("Ястреб поймал дичь и ест");
+    }
+
+/* HW1
+    @Override
     public void toSwim() {
         System.out.println(animalType() + " не умеет плавать");
     }
@@ -20,5 +26,7 @@ public class Hawk extends Animal{
     @Override
     public void toGo() {
         System.out.println(animalType() + " не умеет бегать");
-    }
 }
+ */
+    }
+
