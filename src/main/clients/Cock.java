@@ -2,7 +2,7 @@ package main.clients;
 
 import java.time.LocalDate;
 
-public class Cock extends Animal{
+public class Cock extends Animal implements Goable, Flyable{
     public Cock(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
         super(nickName, owner, birthDate, illness);
     }
@@ -16,12 +16,25 @@ public class Cock extends Animal{
         System.out.println("Петуху насыпали пшена и он не спеша клюет");
     }
 
-    /* HW1
-    public void toSwim() {
-        System.out.println(animalType() + " не умеет плавать");
-    }
+    @Override
     public void toFly() {
-        System.out.println((animalType() + " летает крайне сомнительно"));
-}
-     */
+        System.out.println(nickName + " летает крайне сомнительно");
+    }
+
+    @Override
+    public double getFlySpeed() {
+        return 2;
+    }
+
+    @Override
+    public void toGo() {
+        System.out.println(nickName+ " побежал куда-то");
+    }
+
+    @Override
+    public double getRunSpeed() {
+        return 8;
+    }
+
+
 }

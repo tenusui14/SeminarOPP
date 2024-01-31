@@ -43,16 +43,6 @@ public abstract class Animal {
         this.illness = illness;
     }
 
-//    public void toGo(){
-//        System.out.println(animalType() + " бежит");
-//    }
-//    public void toSwim(){
-//        System.out.println(animalType() + " плывет");
-//    }
-//
-//    public void toFly(){
-//        System.out.println(animalType() + " летит");
-//    }
 
     public String animalType() {
         return getClass().getSimpleName();
@@ -77,12 +67,6 @@ public abstract class Animal {
         System.out.println("Животное уснуло");
     }
 
-//    public void lifeCycle() {
-//        wakeUp();
-//        hunt();
-//        eat();
-//        sleep();
-//    }
 
 
 

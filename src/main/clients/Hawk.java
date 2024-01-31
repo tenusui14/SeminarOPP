@@ -3,7 +3,7 @@ package main.clients;
 import java.sql.SQLOutput;
 import java.time.LocalDate;
 
-public class Hawk extends Animal{
+public class Hawk extends Animal implements Flyable, Goable{
     public Hawk(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
         super(nickName, owner, birthDate, illness);
     }
@@ -17,16 +17,26 @@ public class Hawk extends Animal{
         System.out.println("Ястреб поймал дичь и ест");
     }
 
-/* HW1
     @Override
-    public void toSwim() {
-        System.out.println(animalType() + " не умеет плавать");
+    public void toFly() {
+        System.out.println(nickName + " полетел куда-то");
+    }
+
+    @Override
+    public double getFlySpeed() {
+        return 15;
     }
 
     @Override
     public void toGo() {
-        System.out.println(animalType() + " не умеет бегать");
-}
- */
+        System.out.println(nickName + " сел на землю и крадется");
+    }
+
+    @Override
+    public double getRunSpeed() {
+        return 4;
+    }
+
+
     }
 
