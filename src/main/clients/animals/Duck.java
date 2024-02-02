@@ -1,4 +1,6 @@
-package main.clients;
+package main.clients.animals;
+
+import main.clients.*;
 
 import java.time.LocalDate;
 

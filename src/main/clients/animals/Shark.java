@@ -1,8 +1,11 @@
-package main.clients;
+package main.clients.animals;
+
+import main.clients.Illness;
+import main.clients.Owner;
 
 import java.time.LocalDate;
 
-public class Shark extends Animal implements Swimable{
+public class Shark extends Animal implements Swimable {
     public Shark(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
         super(nickName, owner, birthDate, illness);
     }

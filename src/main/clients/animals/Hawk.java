@@ -1,9 +1,11 @@
-package main.clients;
+package main.clients.animals;
 
-import java.sql.SQLOutput;
+import main.clients.Illness;
+import main.clients.Owner;
+
 import java.time.LocalDate;
 
-public class Hawk extends Animal implements Flyable, Goable{
+public class Hawk extends Animal implements Flyable, Goable {
     public Hawk(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
         super(nickName, owner, birthDate, illness);
     }

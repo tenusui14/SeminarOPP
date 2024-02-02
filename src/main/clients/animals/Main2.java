@@ -1,4 +1,4 @@
-package main.clients;
+package main.clients.animals;
 
 import java.util.ArrayList;
 import java.util.List;

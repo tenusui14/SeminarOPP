@@ -1,8 +1,11 @@
-package main.clients;
+package main.clients.animals;
+
+import main.clients.Illness;
+import main.clients.Owner;
 
 import java.time.LocalDate;
 
-public class Penguin extends Animal implements Goable, Swimable{
+public class Penguin extends Animal implements Goable, Swimable {
     public Penguin(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
         super(nickName, owner, birthDate, illness);
     }
