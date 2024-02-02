@@ -28,7 +28,6 @@ public class Main3 {
 
         VeterinaryClinic vetClinic = new VeterinaryClinic();
 
-        Doctor example = new Doctor("Sss SSS");
         vetClinic.getStaffList();
         vetClinic.getStaffCount();
         vetClinic.getSwimmers(patients);
