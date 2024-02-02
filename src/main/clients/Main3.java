@@ -30,9 +30,10 @@ public class Main3 {
 
         Doctor example = new Doctor("Sss SSS");
         vetClinic.getStaffList();
+        vetClinic.getStaffCount();
         vetClinic.getSwimmers(patients);
         vetClinic.getFlyers(patients);
         vetClinic.getRunners(patients);
-        vetClinic.getStaffCount();
+
     }
 }
