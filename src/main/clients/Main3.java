@@ -2,8 +2,10 @@ package main.clients;
 import main.clients.VeterinaryClinic;
 import main.clients.animals.*;
 import main.staff.Doctor;
+import main.staff.Nurse;
 import main.staff.Worker;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,26 +13,40 @@ import static main.clients.VeterinaryClinic.*;
 
 public class Main3 {
     public static void main(String[] args) {
-        ArrayList<Worker> staff = new ArrayList<>();
 
-        ArrayList<Animal> patients = new ArrayList<>();
-        Cat cat = new Cat();
-        Dog dog = new Dog();
+        Cat cat = new Cat("Bars", new Owner("george"), LocalDate.now(),new Illness("Lishay"), 10d);
+        Dog dog = new Dog("jack", new Owner("john"),LocalDate.now(),new Illness("gribok"));
+        Cat cat2 = new Cat();
         Cock cock = new Cock();
         Duck duck = new Duck();
         Hawk hawk = new Hawk();
         Penguin peng = new Penguin();
         Shark shark = new Shark();
 
-        patients.add(cat);
-        patients.add(dog);
-        patients.add(cock);
-        patients.add(duck);
-        patients.add(hawk);
-        patients.add(peng);
-        patients.add(shark);
 
-        VeterinaryClinic vetClinic = new VeterinaryClinic(staff, patients);
+        Doctor doc = new Doctor("Иван Сергеевич", "Хирург");
+        Doctor doc2 = new Doctor("Сергей Иванович", "Глав. врач");
+        Nurse nurse1 = new Nurse("Алла Генадьевна");
+        Nurse nurse2 = new Nurse("Виктория Константиновна");
+        Nurse nurse3 = new Nurse("Валерия Анатольевна");
+
+
+
+        VeterinaryClinic vetClinic = new VeterinaryClinic();
+
+        vetClinic.addPatient(cat);
+
+        vetClinic.addPatient(dog);
+        vetClinic.addPatient(cat2);
+        vetClinic.addPatient(cat);
+        vetClinic.addWorker(doc);
+        vetClinic.addWorker(doc2);
+        System.out.println(vetClinic.patients);
+        vetClinic.delPatient(cat);
+        System.out.println(vetClinic.patients);
+        System.out.println(vetClinic.staff);
+        vetClinic.delWorker(doc2);
+        System.out.println(vetClinic.staff);
 
         List<Animal> swimmers = new ArrayList<>(vetClinic.getSwimmers());
         System.out.println(swimmers);
