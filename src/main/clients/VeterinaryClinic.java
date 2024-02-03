@@ -23,13 +23,7 @@ public class VeterinaryClinic {
         staff = new ArrayList<>();
     }
 
-    public void setPatients(ArrayList<Animal> patients) {
-        this.patients = patients;
-    }
 
-    public void setStaff(ArrayList<Worker> staff) {
-        this.staff = staff;
-    }
 
 
     // Методы получения всех бегающих, всех плавающих и всех летающих
@@ -74,32 +68,42 @@ public class VeterinaryClinic {
 
     // Методы для работы с персоналом и животными:
 
+    public void setPatients(ArrayList<Animal> patients) {
+        this.patients = patients;
+    }
+
+    public void setStaff(ArrayList<Worker> staff) {
+        this.staff = staff;
+    }
+
     public ArrayList<Worker> addWorker(Worker worker) {
-        staff.add(worker);
+        if (!staff.contains(worker)) {
+            staff.add(worker);
+        }
         return staff;
     }
 
     public ArrayList<Animal> addPatient(Animal animal) {
-        patients.add(animal);
+        if (!patients.contains(animal)) {
+            patients.add(animal);
+        }
         return patients;
     }
 
     public ArrayList<Worker> delWorker(Worker worker) {
         if (staff.contains(worker)) {
             staff.remove(worker);
-            return staff;
-        } else {
-            return staff;
         }
+        return staff;
     }
+
 
     public ArrayList<Animal> delPatient(Animal animal) {
         if (patients.contains(animal)) {
             patients.remove(animal);
-            return patients;
-        } else {
-            return patients;
         }
+        return patients;
+
     }
 
 

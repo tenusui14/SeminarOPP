@@ -35,7 +35,6 @@ public class Main3 {
         VeterinaryClinic vetClinic = new VeterinaryClinic();
 
         vetClinic.addPatient(cat);
-
         vetClinic.addPatient(dog);
         vetClinic.addPatient(cat2);
         vetClinic.addPatient(cat);
