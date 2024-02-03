@@ -2,13 +2,17 @@ package main.clients;
 import main.clients.VeterinaryClinic;
 import main.clients.animals.*;
 import main.staff.Doctor;
+import main.staff.Worker;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static main.clients.VeterinaryClinic.*;
 
 public class Main3 {
     public static void main(String[] args) {
+        ArrayList<Worker> staff = new ArrayList<>();
+
         ArrayList<Animal> patients = new ArrayList<>();
         Cat cat = new Cat();
         Dog dog = new Dog();
@@ -26,13 +30,14 @@ public class Main3 {
         patients.add(peng);
         patients.add(shark);
 
-        VeterinaryClinic vetClinic = new VeterinaryClinic();
+        VeterinaryClinic vetClinic = new VeterinaryClinic(staff, patients);
 
-        vetClinic.getStaffList();
-        vetClinic.getStaffCount();
-        vetClinic.getSwimmers(patients);
-        vetClinic.getFlyers(patients);
-        vetClinic.getRunners(patients);
+        List<Animal> swimmers = new ArrayList<>(vetClinic.getSwimmers());
+        System.out.println(swimmers);
+        List<Animal> flyers = new ArrayList<>(vetClinic.getFlyers());
+        System.out.println(flyers);
+        List<Animal> runners = new ArrayList<>(vetClinic.getRunners());
+        System.out.println(runners);
 
     }
 }

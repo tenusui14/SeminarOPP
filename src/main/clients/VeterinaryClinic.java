@@ -6,53 +6,59 @@ import main.staff.Nurse;
 import main.staff.Worker;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VeterinaryClinic {
 
     protected ArrayList<Worker> staff;
     protected ArrayList<Animal> patients;
 
-    public VeterinaryClinic(){
-
+    public VeterinaryClinic(ArrayList<Worker> staff, ArrayList<Animal> patients){
+    this.patients = patients;
+    this.staff = staff;
     }
+
 
 
 
     // Методы получения всех бегающих, всех плавающих и всех летающих
-    public void getSwimmers(ArrayList<Animal> patients) {
+    public List<Animal> getSwimmers() {
 
-        int count = 0;
+        List<Animal> result = new ArrayList<>();
 
         for (int i = 0; i < patients.size(); i++) {
             if (patients.get(i) instanceof Swimable) {
-                count++;
+                result.add(patients.get(i));
             }
         }
-        System.out.println("Количество плавающих животных: " + count);
+        System.out.println("Количество плавающих животных: " + result.size());
+        return result;
     }
 
-    public void getFlyers(ArrayList<Animal> patients) {
+    public List<Animal> getFlyers() {
 
-        int count = 0;
+        List<Animal> result = new ArrayList<>();
 
         for (int i = 0; i < patients.size(); i++) {
             if (patients.get(i) instanceof Flyable) {
-                count++;
+                result.add(patients.get(i));
             }
         }
-        System.out.println("Количество летающих животных: " + count);
+        System.out.println("Количество летающих животных: " + result.size());
+        return result;
     }
 
-    public void getRunners(ArrayList<Animal> patients) {
+    public List<Animal> getRunners() {
 
-        int count = 0;
+        List<Animal> result = new ArrayList<>();
 
         for (int i = 0; i < patients.size(); i++) {
             if (patients.get(i) instanceof Goable) {
-                count++;
+                result.add(patients.get(i));
             }
         }
-        System.out.println("Количество бегающих животных: " + count);
+        System.out.println("Количество бегающих животных: " + result.size());
+        return result;
     }
 
     // Методы для работы с персоналом
@@ -60,8 +66,6 @@ public class VeterinaryClinic {
 
 
     protected void getStaffList() {
-        ArrayList<Worker> staff = new ArrayList<>();
-        this.staff = staff;
         Doctor doc = new Doctor("Иван Сергеевич", "Хирург");
         Doctor doc2 = new Doctor("Сергей Иванович", "Глав. врач");
         Nurse nurse1 = new Nurse("Алла Генадьевна");
