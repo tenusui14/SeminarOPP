@@ -30,22 +30,28 @@ public class Main3 {
         Nurse nurse2 = new Nurse("Виктория Константиновна");
         Nurse nurse3 = new Nurse("Валерия Анатольевна");
 
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(cat);
+        animals.add(dog);
+        animals.add(duck);
+        animals.add(shark);
 
 
         VeterinaryClinic vetClinic = new VeterinaryClinic();
-
-        vetClinic.addPatient(cat);
-        vetClinic.addPatient(dog);
-        vetClinic.addPatient(cat2);
-        vetClinic.addPatient(cat);
-        vetClinic.addWorker(doc);
-        vetClinic.addWorker(doc2);
+        vetClinic.setPatients(animals);
         System.out.println(vetClinic.patients);
-        vetClinic.delPatient(cat);
-        System.out.println(vetClinic.patients);
-        System.out.println(vetClinic.staff);
-        vetClinic.delWorker(doc2);
-        System.out.println(vetClinic.staff);
+//        vetClinic.addPatient(cat);
+//        vetClinic.addPatient(dog);
+//        vetClinic.addPatient(cat2);
+//        vetClinic.addPatient(cat);
+//        vetClinic.addWorker(doc);
+//        vetClinic.addWorker(doc2);
+//        System.out.println(vetClinic.patients);
+//        vetClinic.delPatient(cat);
+//        System.out.println(vetClinic.patients);
+//        System.out.println(vetClinic.staff);
+//        vetClinic.delWorker(doc2);
+//        System.out.println(vetClinic.staff);
 
         List<Animal> swimmers = new ArrayList<>(vetClinic.getSwimmers());
         System.out.println(swimmers);
