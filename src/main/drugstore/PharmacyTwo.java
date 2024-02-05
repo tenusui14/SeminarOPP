@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class PharmacyTwo implements Iterable<Component> {
+public class PharmacyTwo implements Iterable<Component>, Comparable<PharmacyTwo> {
     private List<Component> components = new ArrayList<>();
+
     private int index;
+
 
 
 
@@ -16,6 +18,13 @@ public class PharmacyTwo implements Iterable<Component> {
         }
     }
 
+    public int getWeight(){
+        int weight = 0;
+        for(Component c: this.components){
+            weight += c.weight;
+        }
+        return weight;
+    }
     @Override
     public Iterator<Component> iterator() {
         return new Iterator<Component>() {
@@ -31,4 +40,13 @@ public class PharmacyTwo implements Iterable<Component> {
         };
     }
 
+    @Override
+    public int compareTo(PharmacyTwo o) {
+        return Integer.compare(this.getWeight(), o.getWeight());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Ves = %s", getWeight());
+    }
 }
